@@ -17,11 +17,24 @@ const getRandomColor = function () {
   return niceColors[randomPosition];
 };
 
-for (let i = 0; i < 16; i++) {
+for (let i = 0; i < 2; i++) {
   const box = document.createElement("div");
   box.setAttribute("class", "box");
   box.addEventListener("mouseenter", () => {
     box.style.backgroundColor = getRandomColor();
+    checkMatchColors();
   });
   container.append(box);
 }
+
+const allBoxes = [...document.querySelectorAll(".box")];
+
+const checkMatchColors = () => {
+  const color = allBoxes[0].style.backgroundColor;
+  if (
+    allBoxes.filter((box) => box.style.backgroundColor === color).length ===
+    allBoxes.length
+  ) {
+    alert("Nice Job!!!");
+  }
+};
