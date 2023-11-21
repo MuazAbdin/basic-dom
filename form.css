@@ -1,0 +1,64 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+  background-color: hsl(120, 40%, 70%);
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 20px;
+  border: 2px solid hsl(120, 40%, 35%);
+  grid-template-areas:
+    "message message"
+    "name name"
+    "salary birthday"
+    "phone phone"
+    ". btn";
+}
+
+.form-item {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid darkcyan;
+}
+
+.message {
+  grid-area: message;
+  text-align: center;
+  font-weight: 600;
+  display: none;
+}
+.name {
+  grid-area: name;
+}
+.salary {
+  grid-area: salary;
+}
+.birthday {
+  grid-area: birthday;
+}
+.phone {
+  grid-area: phone;
+}
+.btn {
+  grid-area: btn;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: darkgray;
+}
+
+.welcome-msg {
+  margin-top: 75px;
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 900;
+  color: darkgreen;
+}
