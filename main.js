@@ -41,3 +41,22 @@ topArrow.addEventListener("click", () => move("top"));
 leftArrow.addEventListener("click", () => move("left"));
 rightArrow.addEventListener("click", () => move("right"));
 bottomArrow.addEventListener("click", () => move("bottom"));
+
+document.addEventListener("keydown", (event) => {
+  switch (event.code) {
+    case "ArrowUp":
+      move("top");
+      break;
+    case "ArrowDown":
+      move("bottom");
+      break;
+    case "ArrowRight":
+      move("right");
+      break;
+    case "ArrowLeft":
+      move("left");
+      break;
+    default:
+      break;
+  }
+});
